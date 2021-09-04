@@ -33,7 +33,7 @@ public class MyCoolMod implements ModInitializer {
 			.configure(new OreFeatureConfig(
 					OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
 					SUPER_COAL_ORE.getDefaultState(),
-6
+				6
 			))
 			.range(new RangeDecoratorConfig(
 					UniformHeightProvider.create(YOffset.aboveBottom(0), YOffset.fixed(64))
