@@ -4,23 +4,22 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
-import net.minecraft.sound.BlockSoundGroup;
 
-public class TestBlock extends Block
+public class SuperCoalBlock extends Block implements ITileEntityProvider
 {
-	public TestBlock()
+	public SuperCoalBlock()
 	{
 		super(
 				FabricBlockSettings
-						.of(Material.WOOD)
+						.of(Material.STONE)
 						.breakByHand(false)
-						.breakByTool(FabricToolTags.AXES)
-						.hardness(2.0f)
-						.resistance(0.5f)
+						.breakByTool(FabricToolTags.PICKAXES, 3)
+						.hardness(4.5f)
+						.resistance(6f)
 				);
 	}
 	
-	public TestBlock(Settings settings) {
+	public SuperCoalBlock(Settings settings) {
 		super(settings);
 	}
 }

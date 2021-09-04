@@ -1,3 +1,5 @@
 { 
-	"item.coolmod.testitem": "Super Coal"
+	"item.coolmod.super_coal": "Super Coal",
+	"block.coolmod.super_coal_block": "Super Coal Block",
+	"block.coolmod.super_coal_furnace": "Super Coal Furnace"
 }

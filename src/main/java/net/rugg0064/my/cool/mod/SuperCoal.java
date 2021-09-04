@@ -15,6 +15,7 @@ public class SuperCoal extends Item{
 		super(settings);
 	}
 
+	/*
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand)
 	{
 		playerEntity.playSound(SoundEvents.BLOCK_LADDER_BREAK, 1.0f, 1.0f);
@@ -22,6 +23,7 @@ public class SuperCoal extends Item{
 		playerEntity.getInventory().removeOne(playerEntity.getStackInHand(hand));
 		return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, playerEntity.getStackInHand(hand));
 	}
+	*/
 
 	
 }
