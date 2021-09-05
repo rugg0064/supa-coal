@@ -18,7 +18,7 @@ public class CoalCokeOre extends Block
                 FabricBlockSettings
                         .of(Material.STONE)
                         .breakByHand(false)
-                        .breakByTool(FabricToolTags.PICKAXES, 2)
+                        .breakByTool(FabricToolTags.PICKAXES, 3)
                         .hardness(4.5f)
                         .resistance(6f)
         );
