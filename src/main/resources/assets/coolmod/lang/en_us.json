@@ -1,5 +1,6 @@
 { 
-	"item.coolmod.super_coal": "Super Coal",
-	"block.coolmod.super_coal_block": "Super Coal Block",
-	"block.coolmod.super_coal_furnace": "Super Coal Furnace"
+	"item.coolmod.coal_coke": "Coal Coke",
+	"block.coolmod.coal_coke_block": "Coal Coke Block",
+	"block.coolmod.oven_bricks": "Oven Bricks",
+	"block.coolmod.coal_coke_ore": "Coal Coke Ore"
 }

@@ -10,9 +10,9 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
 
-public class SuperCoalOre extends Block
+public class CoalCokeOre extends Block
 {
-    public SuperCoalOre()
+    public CoalCokeOre()
     {
         super(
                 FabricBlockSettings

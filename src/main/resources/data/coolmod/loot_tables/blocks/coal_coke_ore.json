@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coolmod:super_coal"
+          "name": "coolmod:coal_coke_ore"
         }
       ],
       "conditions": [

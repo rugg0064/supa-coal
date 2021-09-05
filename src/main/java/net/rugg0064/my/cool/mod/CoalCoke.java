@@ -9,9 +9,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class SuperCoal extends Item{
+public class CoalCoke extends Item{
 
-	public SuperCoal(Settings settings) {
+	public CoalCoke(Settings settings) {
 		super(settings);
 	}
 

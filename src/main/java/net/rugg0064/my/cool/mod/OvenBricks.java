@@ -6,9 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
-public class SuperCoalFurnace extends Block
+public class OvenBricks extends Block
 {
-    public SuperCoalFurnace()
+    public OvenBricks()
     {
         super(FabricBlockSettings
                 .of(Material.STONE)
