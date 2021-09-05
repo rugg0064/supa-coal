@@ -5,9 +5,9 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 
-public class SuperCoalBlock extends Block implements ITileEntityProvider
+public class CoalCokeBlock extends Block
 {
-	public SuperCoalBlock()
+	public CoalCokeBlock()
 	{
 		super(
 				FabricBlockSettings
@@ -17,9 +17,5 @@ public class SuperCoalBlock extends Block implements ITileEntityProvider
 						.hardness(4.5f)
 						.resistance(6f)
 				);
-	}
-	
-	public SuperCoalBlock(Settings settings) {
-		super(settings);
 	}
 }

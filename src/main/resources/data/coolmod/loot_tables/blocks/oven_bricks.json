@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coolmod:super_coal_block"
+          "name": "coolmod:oven_bricks"
         }
       ],
       "conditions": [
