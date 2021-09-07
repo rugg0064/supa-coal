@@ -3,10 +3,15 @@ package net.rugg0064.my.cool.mod;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -25,6 +30,10 @@ public class MyCoolMod implements ModInitializer {
 	public static final CoalCokeBlock COAL_COKE_BLOCK = new CoalCokeBlock();
 	public static final OvenBricks OVEN_BRICKS = new OvenBricks();
 	public static final CoalCokeOre COAL_COKE_ORE = new CoalCokeOre();
+
+	public static ScreenHandlerType<BoxScreenHandler> BOX_SCREEN_HANDLER;
+
+	public static BlockEntityType<OvenBrickEntity> OVEN_BRICK_ENTITY;
 	// Create ore feature config for the ORE.
 	public static ConfiguredFeature<?, ?> SUPER_COAL_OVERWORLD = Feature.ORE
 			.configure(new OreFeatureConfig(
@@ -43,6 +52,11 @@ public class MyCoolMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+		BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(new Identifier("coolmod", "box_screen_handler"), BoxScreenHandler::new);
+
+		//Register the furnace block entity
+		OVEN_BRICK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier("coolmod", "oven_brick_entity"), FabricBlockEntityTypeBuilder.create(OvenBrickEntity::new, OVEN_BRICKS).build(null));
 
 		//Register coal ore block
 		Registry.register(Registry.BLOCK, new Identifier("coolmod", "coal_coke_ore"), COAL_COKE_ORE);
@@ -72,5 +86,12 @@ public class MyCoolMod implements ModInitializer {
 		//Register the super coal furnace item
 		Registry.register(Registry.ITEM, new Identifier("coolmod", "oven_bricks"), new BlockItem(OVEN_BRICKS, new Item.Settings().group(ItemGroup.MISC)));
 
+
+		ScreenRegistry.register(MyCoolMod.BOX_SCREEN_HANDLER, BoxScreen::new);
 	}
+
+	public void onInitializeClient()
+	{
+	}
+
 }
