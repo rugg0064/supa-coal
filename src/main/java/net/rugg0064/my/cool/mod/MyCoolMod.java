@@ -23,6 +23,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
+import net.rugg0064.my.cool.mod.sblock.SBlock;
+import net.rugg0064.my.cool.mod.sblock.SBlockEntity;
+import net.rugg0064.my.cool.mod.sblock.SBlockScreen;
+import net.rugg0064.my.cool.mod.sblock.SBlockScreenHandler;
 
 public class MyCoolMod implements ModInitializer {
 	
@@ -32,8 +36,12 @@ public class MyCoolMod implements ModInitializer {
 	public static final CoalCokeOre COAL_COKE_ORE = new CoalCokeOre();
 
 	public static ScreenHandlerType<BoxScreenHandler> BOX_SCREEN_HANDLER;
-
 	public static BlockEntityType<OvenBrickEntity> OVEN_BRICK_ENTITY;
+
+	public static final SBlock S_BLOCK = new SBlock();
+	public static BlockEntityType<SBlockEntity> S_BLOCK_ENTITY;
+	public static ScreenHandlerType<SBlockScreenHandler> S_BLOCK_SCREEN_HANDLER;
+
 	// Create ore feature config for the ORE.
 	public static ConfiguredFeature<?, ?> SUPER_COAL_OVERWORLD = Feature.ORE
 			.configure(new OreFeatureConfig(
@@ -49,6 +57,14 @@ public class MyCoolMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		//SBlock registering
+		S_BLOCK_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier("coolmod", "s_block_screen_handler"), SBlockScreenHandler::new);
+		S_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier("coolmod", "s_block_entity"), FabricBlockEntityTypeBuilder.create(SBlockEntity::new, S_BLOCK).build(null));
+		Registry.register(Registry.BLOCK, new Identifier("coolmod", "s_block"), S_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier("coolmod", "s_block"), new BlockItem(S_BLOCK, new Item.Settings().group(ItemGroup.MISC)));
+		ScreenRegistry.register(S_BLOCK_SCREEN_HANDLER, SBlockScreen::new);
+
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
